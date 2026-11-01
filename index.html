@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>دروسي</title>
-<meta name="theme-color" content="#0b1036">
+<meta name="theme-color" content="#061c24">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -17,15 +17,21 @@
 <style>
 /* Layout: phone-first app shell, 520px column, fixed glass bottom nav; deep indigo night with violet glow */
 :root{
-  --bg:#0b1036; --bg2:#2b1a6b; --panel:#1b2150; --panel2:#232a5e; --line:#363f7d;
-  --fg:#f3f2ff; --muted:#a9acd6; --accent:#a855f7; --accent2:#4f6ef0; --ok:#34d399;
+  --ok:#34d399;
   --display:"Alexandria","Tajawal",system-ui,sans-serif; --body:"Tajawal",system-ui,sans-serif;
   color-scheme:dark;
 }
+/* skins */
+:root{--bg:#061c24;--bg2:#0b3a44;--panel:#0e2b35;--panel2:#123744;--line:#21505d;--fg:#eef8f7;--muted:#97b8bf;--accent:#f5a524;--accent2:#14b8a6;--accent-hi:#fcd34d;--on-accent:#2a1a00;--gold-grad:linear-gradient(135deg,#fcd34d,#f59e0b);--prim-grad:linear-gradient(90deg,#0d9488,#14b8a6);--glow1:#0f5a5e;--glow2:#0b4450;--bgEnd:#08242d;--accent-soft:rgba(245,165,36,.10);--accent-glow:rgba(245,165,36,.3);--track:#1d4552;--deep:#04161d;--card:#0b2530;--soft:#cfe3e3;--shade:rgba(3,18,24,.45);--chip:#163f4c;--open-bg:#0f766e;--open-line:#2dd4bf;--lesson-bg:rgba(2,30,32,.4);--lesson-sub:#ccfbf1;--input:#082630;--veil:rgba(1,10,14,.65);--sheet:#0c2c36;--grip:#2f6573;--nav:rgba(9,60,70,.6);--navtx:#a7c9cf}
+:root[data-skin="royal"]{--bg:#0e0a2a;--bg2:#2a1660;--panel:#1a1442;--panel2:#221a52;--line:#3a2f78;--fg:#f4f1ff;--muted:#b0a8de;--accent:#f472b6;--accent2:#a855f7;--accent-hi:#f9a8d4;--on-accent:#3b0420;--gold-grad:linear-gradient(135deg,#f9a8d4,#ec4899);--prim-grad:linear-gradient(90deg,#6d28d9,#a855f7);--glow1:#4c1d95;--glow2:#831843;--bgEnd:#130d33;--accent-soft:rgba(244,114,182,.10);--accent-glow:rgba(236,72,153,.35);--track:#2e2560;--deep:#120d30;--card:#150f38;--soft:#ddd6fe;--shade:rgba(10,6,30,.45);--chip:#2a2163;--open-bg:#5b21b6;--open-line:#a78bfa;--lesson-bg:rgba(20,6,50,.4);--lesson-sub:#ede9fe;--input:#120d30;--veil:rgba(5,3,18,.65);--sheet:#1a1442;--grip:#4b3f8f;--nav:rgba(50,30,110,.6);--navtx:#c4b5fd}
+:root[data-skin="sunset"]{--bg:#1c0b12;--bg2:#3b1322;--panel:#2a121c;--panel2:#341824;--line:#5a2a3a;--fg:#fff3ee;--muted:#d8a9a6;--accent:#fb923c;--accent2:#f43f5e;--accent-hi:#fdba74;--on-accent:#3a1300;--gold-grad:linear-gradient(135deg,#fdba74,#f97316);--prim-grad:linear-gradient(90deg,#e11d48,#f97316);--glow1:#9f1239;--glow2:#7c2d12;--bgEnd:#210c14;--accent-soft:rgba(251,146,60,.10);--accent-glow:rgba(249,115,22,.35);--track:#4a2230;--deep:#180910;--card:#22101a;--soft:#fde2d8;--shade:rgba(20,5,10,.45);--chip:#43202d;--open-bg:#be123c;--open-line:#fb7185;--lesson-bg:rgba(40,5,15,.35);--lesson-sub:#ffe4e6;--input:#1a0a10;--veil:rgba(15,3,8,.65);--sheet:#2a121c;--grip:#6a3446;--nav:rgba(90,25,45,.6);--navtx:#f4b6b0}
+:root[data-skin="ocean"]{--bg:#031329;--bg2:#0a2a55;--panel:#0a1f40;--panel2:#0f284f;--line:#1e4378;--fg:#eef6ff;--muted:#9fb9dc;--accent:#22d3ee;--accent2:#3b82f6;--accent-hi:#67e8f9;--on-accent:#032a33;--gold-grad:linear-gradient(135deg,#67e8f9,#06b6d4);--prim-grad:linear-gradient(90deg,#2563eb,#06b6d4);--glow1:#1e3a8a;--glow2:#0e5a7a;--bgEnd:#041a36;--accent-soft:rgba(34,211,238,.10);--accent-glow:rgba(6,182,212,.35);--track:#18375f;--deep:#031024;--card:#071a36;--soft:#d6e8ff;--shade:rgba(2,10,25,.45);--chip:#133463;--open-bg:#1d4ed8;--open-line:#60a5fa;--lesson-bg:rgba(2,12,40,.4);--lesson-sub:#dbeafe;--input:#04152e;--veil:rgba(1,6,16,.65);--sheet:#0a1f40;--grip:#2d5590;--nav:rgba(15,45,100,.6);--navtx:#a5c4ec}
+:root[data-skin="gold"]{--bg:#0f0d0a;--bg2:#2a2214;--panel:#1b1812;--panel2:#231f17;--line:#3d3424;--fg:#fbf6ea;--muted:#bfb294;--accent:#e9b949;--accent2:#c9962b;--accent-hi:#f5d77e;--on-accent:#2b1f00;--gold-grad:linear-gradient(135deg,#f5d77e,#c9962b);--prim-grad:linear-gradient(90deg,#a16207,#d4a133);--glow1:#4a3a14;--glow2:#2e2410;--bgEnd:#12100b;--accent-soft:rgba(233,185,73,.08);--accent-glow:rgba(233,185,73,.3);--track:#3a3222;--deep:#0c0a07;--card:#16130e;--soft:#efe4c8;--shade:rgba(10,8,4,.5);--chip:#2c261a;--open-bg:#7a5a12;--open-line:#e9b949;--lesson-bg:rgba(15,10,0,.35);--lesson-sub:#fef3c7;--input:#12100b;--veil:rgba(5,4,2,.7);--sheet:#1b1812;--grip:#5a4c30;--nav:rgba(45,38,22,.65);--navtx:#d6c79f}
+:root[data-skin="aurora"]{--bg:#0b1220;--bg2:#1a2440;--panel:#121a30;--panel2:#18223c;--line:#2a3a5c;--fg:#f0f7ff;--muted:#a8b6d4;--accent:#6ee7b7;--accent2:#34d399;--accent-hi:#a7f3d0;--on-accent:#032b1e;--gold-grad:linear-gradient(135deg,#a7f3d0,#34d399);--prim-grad:linear-gradient(90deg,#8b5cf6,#10b981);--glow1:#065f46;--glow2:#6b21a8;--bgEnd:#0c1426;--accent-soft:rgba(110,231,183,.08);--accent-glow:rgba(52,211,153,.3);--track:#25335a;--deep:#090f1c;--card:#0f172b;--soft:#dbe4f5;--shade:rgba(5,8,18,.45);--chip:#1f2c4d;--open-bg:#5b3fd0;--open-line:#a78bfa;--lesson-bg:rgba(5,5,30,.35);--lesson-sub:#e9e5ff;--input:#0a1020;--veil:rgba(3,5,12,.65);--sheet:#121a30;--grip:#3a4b78;--nav:rgba(30,40,80,.6);--navtx:#b8c4e4}
 *{box-sizing:border-box}
 html,body{height:100%}
 body{margin:0;font-family:var(--body);color:var(--fg);background:var(--bg);
-  background-image:radial-gradient(120% 60% at 90% 0%,#4c2a9e 0%,transparent 55%),radial-gradient(90% 50% at 0% 100%,#3a1f84 0%,transparent 60%),linear-gradient(180deg,var(--bg) 0%,#141a4a 100%);
+  background-image:radial-gradient(120% 60% at 90% 0%,var(--glow1) 0%,transparent 55%),radial-gradient(90% 50% at 0% 100%,var(--glow2) 0%,transparent 60%),linear-gradient(180deg,var(--bg) 0%,var(--bgEnd) 100%);
   background-attachment:fixed;font-size:16px;line-height:1.6}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
@@ -46,12 +52,12 @@ svg.i{width:22px;height:22px;flex:none;fill:none;stroke:currentColor;stroke-widt
 .row{display:flex;align-items:center;gap:10px}
 .sec-head{display:flex;justify-content:space-between;align-items:center;margin:26px 0 14px;gap:10px}
 .sec-head h2{font-size:20px}
-.pill-btn{background:linear-gradient(135deg,#a855f7,#7c3aed);border-radius:999px;padding:8px 18px;font-weight:800;font-family:var(--display);font-size:14px;box-shadow:0 6px 20px rgba(168,85,247,.35)}
+.pill-btn{color:var(--on-accent);background:var(--gold-grad);border-radius:999px;padding:8px 18px;font-weight:800;font-family:var(--display);font-size:14px;box-shadow:0 6px 20px var(--accent-glow)}
 
 /* continue banner */
-.cont{margin-top:20px;display:flex;align-items:center;gap:12px;border:1.5px solid var(--accent);border-radius:20px;background:rgba(124,58,237,.16);padding:12px 14px;width:100%;text-align:right}
-.cont .disc{width:48px;height:48px;border-radius:50%;background:conic-gradient(var(--accent) var(--p,0%),#2e356b 0);display:grid;place-items:center;flex:none}
-.cont .disc span{width:38px;height:38px;border-radius:50%;background:#1c2260;display:grid;place-items:center}
+.cont{margin-top:20px;display:flex;align-items:center;gap:12px;border:1.5px solid var(--accent);border-radius:20px;background:var(--accent-soft);padding:12px 14px;width:100%;text-align:right}
+.cont .disc{width:48px;height:48px;border-radius:50%;background:conic-gradient(var(--accent) var(--p,0%),var(--track) 0);display:grid;place-items:center;flex:none}
+.cont .disc span{width:38px;height:38px;border-radius:50%;background:var(--deep);display:grid;place-items:center}
 .cont .disc svg{width:18px;height:18px;fill:#fff}
 .cont .t{flex:1;min-width:0}
 .cont b{font-family:var(--display);display:block}
@@ -60,7 +66,7 @@ svg.i{width:22px;height:22px;flex:none;fill:none;stroke:currentColor;stroke-widt
 /* subject grid */
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .scard{position:relative;overflow:hidden;border-radius:22px;padding:14px;min-height:178px;text-align:right;border:1px solid color-mix(in srgb,var(--c) 40%,transparent);
-  background:linear-gradient(160deg,color-mix(in srgb,var(--c) 26%,#151a45) 0%,#151a45 85%);display:flex;flex-direction:column;justify-content:space-between;transition:transform .15s}
+  background:linear-gradient(160deg,color-mix(in srgb,var(--c) 26%,var(--card)) 0%,var(--card) 85%);display:flex;flex-direction:column;justify-content:space-between;transition:transform .15s}
 .scard:active{transform:scale(.98)}
 .scard .top{display:flex;justify-content:space-between;align-items:flex-start;gap:6px;position:relative;z-index:1}
 .sicon{width:42px;height:42px;border-radius:12px;background:var(--c);display:grid;place-items:center;flex:none}
@@ -78,30 +84,30 @@ svg.i{width:22px;height:22px;flex:none;fill:none;stroke:currentColor;stroke-widt
 
 /* subject page */
 .topbar{display:flex;gap:10px;align-items:stretch}
-.topbar .cont{margin-top:0}
+.topbar .cont{margin-top:0;width:auto;flex:1;min-width:0}
 .hero{margin-top:18px;border-radius:26px;border:1px solid var(--line);padding:18px;background:linear-gradient(160deg,color-mix(in srgb,var(--c) 22%,var(--panel)) 0%,var(--panel) 100%);position:relative;overflow:hidden}
 .hero .sphere{left:auto;right:auto;inset-inline-start:auto;left:50%;top:30px;transform:translateX(-50%);width:200px;height:200px;opacity:.35}
 .hero .sphere svg{width:96px;height:96px}
 .hero > *{position:relative}
 .hero .h{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
 .hero h1{font-size:26px}
-.hero p{color:#cfd0f0;margin:10px 0 16px}
-.teacher{display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:20px;padding:10px;background:rgba(10,14,50,.45)}
-.tav{width:62px;height:62px;border-radius:50%;flex:none;display:grid;place-items:center;font:800 22px var(--display);background:linear-gradient(135deg,var(--c),#312e81);box-shadow:0 0 0 3px color-mix(in srgb,var(--c) 60%,#fff)}
+.hero p{color:var(--soft);margin:10px 0 16px}
+.teacher{display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:20px;padding:10px;background:var(--shade)}
+.tav{width:62px;height:62px;border-radius:50%;flex:none;display:grid;place-items:center;font:800 22px var(--display);background:linear-gradient(135deg,var(--c),var(--bg2));box-shadow:0 0 0 3px color-mix(in srgb,var(--c) 60%,#fff)}
 .teacher .t{flex:1;min-width:0}
 .teacher b{font-family:var(--display);font-size:17px;display:block}
 .teacher small{color:var(--muted);display:block;font-size:13px;line-height:1.4}
 .teacher .iconbtn{width:42px;height:42px;border-radius:50%}
-.tabs{margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:6px;border-radius:22px;border:1px solid var(--line);background:rgba(10,14,50,.4)}
+.tabs{margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:6px;border-radius:22px;border:1px solid var(--line);background:var(--shade)}
 .tabs button{padding:12px;border-radius:17px;font:800 20px var(--display);color:var(--muted);background:rgba(255,255,255,.04)}
-.tabs button[aria-selected="true"]{color:#fff;background:linear-gradient(90deg,#3b82f6,#7c5cf0)}
+.tabs button[aria-selected="true"]{color:#fff;background:var(--prim-grad)}
 .quick{margin-top:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .quick button{border:1px solid var(--line);border-radius:20px;background:var(--panel);padding:14px 6px;display:flex;flex-direction:column;align-items:center;gap:10px;font-weight:700;font-size:15px}
-.quick .q{width:58px;height:58px;border-radius:50%;background:#2a2f6a;border:1px solid var(--line);display:grid;place-items:center}
-.quick .q svg{width:26px;height:26px;color:#c4b5fd}
+.quick .q{width:58px;height:58px;border-radius:50%;background:var(--chip);border:1px solid var(--line);display:grid;place-items:center}
+.quick .q svg{width:26px;height:26px;color:var(--accent-hi)}
 
 .unit{border:1px solid var(--line);border-radius:22px;background:var(--panel);margin-bottom:12px;overflow:hidden}
-.unit.open{border-color:#4d6bff;background:#2453d6}
+.unit.open{border-color:var(--open-line);background:var(--open-bg)}
 .uhead{display:flex;align-items:center;gap:12px;padding:16px;width:100%;text-align:right}
 .uhead .chev{width:22px;height:22px;transition:transform .2s;flex:none}
 .unit.open .chev{transform:rotate(180deg)}
@@ -112,11 +118,11 @@ svg.i{width:22px;height:22px;flex:none;fill:none;stroke:currentColor;stroke-widt
 .ring svg{width:100%;height:100%;transform:rotate(-90deg)}
 .ring span{position:absolute;inset:0;display:grid;place-items:center;font-weight:800;font-size:13px;font-variant-numeric:tabular-nums}
 .lessons{padding:0 10px 12px;display:grid;gap:8px}
-.lesson{display:flex;align-items:center;gap:10px;background:rgba(9,16,70,.45);border-radius:16px;padding:10px 12px;width:100%;text-align:right}
+.lesson{display:flex;align-items:center;gap:10px;background:var(--lesson-bg);border-radius:16px;padding:10px 12px;width:100%;text-align:right}
 .lesson .lt{width:36px;height:36px;border-radius:11px;background:rgba(255,255,255,.12);display:grid;place-items:center;flex:none}
 .lesson .lt svg{width:18px;height:18px}
 .lesson .t{flex:1;min-width:0;line-height:1.35}
-.lesson small{color:#c7d2fe;font-size:12px}
+.lesson small{color:var(--lesson-sub);font-size:12px}
 .lesson .done{width:24px;height:24px;border-radius:50%;border:2px solid rgba(255,255,255,.35);display:grid;place-items:center;flex:none}
 .lesson .done.on{background:var(--ok);border-color:var(--ok)}
 .lesson .done svg{width:14px;height:14px;color:#053}
@@ -125,12 +131,12 @@ svg.i{width:22px;height:22px;flex:none;fill:none;stroke:currentColor;stroke-widt
 .ghost.danger{border-color:#f87171;color:#fecaca}
 
 /* lesson page */
-.player{margin-top:16px;aspect-ratio:16/9;max-width:100%;border-radius:22px;background:radial-gradient(circle at 70% 30%,color-mix(in srgb,var(--c) 55%,transparent),transparent 60%),#0d1240;border:1px solid var(--line);display:grid;place-items:center;text-align:center;padding:16px}
+.player{margin-top:16px;aspect-ratio:16/9;max-width:100%;border-radius:22px;background:radial-gradient(circle at 70% 30%,color-mix(in srgb,var(--c) 55%,transparent),transparent 60%),var(--deep);border:1px solid var(--line);display:grid;place-items:center;text-align:center;padding:16px}
 .player .pb{width:72px;height:72px;border-radius:50%;background:rgba(255,255,255,.14);display:grid;place-items:center;margin:0 auto 10px}
 .player .pb svg{width:30px;height:30px;fill:#fff}
 .player a{color:#fff}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:16px;padding:12px 16px;font-weight:800;font-family:var(--display);font-size:15px;background:var(--panel2);border:1px solid var(--line);text-decoration:none;color:var(--fg)}
-.btn.primary{background:linear-gradient(90deg,#3b82f6,#7c5cf0);border:0}
+.btn.primary{background:var(--prim-grad);border:0}
 .btn.okb{background:var(--ok);color:#043b2a;border:0}
 .btn svg{width:18px;height:18px}
 .actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
@@ -151,32 +157,32 @@ svg.i{width:22px;height:22px;flex:none;fill:none;stroke:currentColor;stroke-widt
 .opt.wrong{background:rgba(248,113,113,.18);border-color:#f87171}
 
 /* schedule */
-.day h3{font-size:16px;margin:18px 0 8px;color:#c4b5fd}
+.day h3{font-size:16px;margin:18px 0 8px;color:var(--accent-hi)}
 .slot{display:flex;gap:12px;align-items:center;border-radius:16px;padding:10px 12px;background:var(--panel);border:1px solid var(--line);margin-bottom:8px;border-inline-start:4px solid var(--c)}
 .slot .time{font-weight:800;font-variant-numeric:tabular-nums;min-width:52px}
 .slot .t{flex:1;min-width:0}
 
 /* form + sheet */
-label{display:block;font-weight:700;font-size:14px;margin:12px 0 6px;color:#d6d7f7}
-input,select,textarea{width:100%;font:inherit;color:var(--fg);background:#121845;border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+label{display:block;font-weight:700;font-size:14px;margin:12px 0 6px;color:var(--soft)}
+input,select,textarea{width:100%;font:inherit;color:var(--fg);background:var(--input);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
 .switch{display:flex;justify-content:space-between;align-items:center;gap:12px}
-.toggle{width:52px;height:30px;border-radius:99px;background:#33396f;position:relative;flex:none}
+.toggle{width:52px;height:30px;border-radius:99px;background:var(--track);position:relative;flex:none}
 .toggle::after{content:"";position:absolute;top:3px;right:3px;width:24px;height:24px;border-radius:50%;background:#fff;transition:right .2s}
 .toggle[aria-pressed="true"]{background:var(--accent)}
 .toggle[aria-pressed="true"]::after{right:25px}
-.veil{position:fixed;inset:0;background:rgba(4,6,25,.65);z-index:40;display:flex;align-items:flex-end;justify-content:center}
-.sheet{width:100%;max-width:520px;max-height:85vh;overflow:auto;background:#161c4f;border:1px solid var(--line);border-radius:26px 26px 0 0;padding:18px max(18px,env(safe-area-inset-right,0px)) calc(22px + env(safe-area-inset-bottom,0px)) max(18px,env(safe-area-inset-left,0px))}
+.veil{position:fixed;inset:0;background:var(--veil);z-index:40;display:flex;align-items:flex-end;justify-content:center}
+.sheet{width:100%;max-width:520px;max-height:85vh;overflow:auto;background:var(--sheet);border:1px solid var(--line);border-radius:26px 26px 0 0;padding:18px max(18px,env(safe-area-inset-right,0px)) calc(22px + env(safe-area-inset-bottom,0px)) max(18px,env(safe-area-inset-left,0px))}
 .sheet h2{font-size:19px;margin-bottom:6px}
-.grip{width:44px;height:5px;border-radius:9px;background:#4a5194;margin:0 auto 14px}
+.grip{width:44px;height:5px;border-radius:9px;background:var(--grip);margin:0 auto 14px}
 .grades{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}
 .grades button{padding:14px 0;border-radius:14px;background:var(--panel2);border:1px solid var(--line);font:800 18px var(--display)}
-.grades button.on{background:linear-gradient(135deg,#a855f7,#7c3aed);border-color:transparent}
-.toast{position:fixed;bottom:calc(110px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);background:#fff;color:#1b1446;font-weight:800;padding:10px 18px;border-radius:99px;z-index:60;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.grades button.on{color:var(--on-accent);background:var(--gold-grad);border-color:transparent}
+.toast{position:fixed;bottom:calc(110px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);background:#fff;color:var(--bg);font-weight:800;padding:10px 18px;border-radius:99px;z-index:60;box-shadow:0 10px 30px rgba(0,0,0,.4)}
 
 /* nav */
 .nav{position:fixed;left:0;right:0;bottom:0;z-index:30;padding:0 max(16px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
-.nav .in{max-width:520px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);border-radius:26px;border:1px solid rgba(255,255,255,.14);background:rgba(60,40,140,.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);padding:8px}
-.nav button{display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 0;color:#b9b6e6;font-weight:700;font-family:var(--display);font-size:13px;border-radius:18px}
+.nav .in{max-width:520px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);border-radius:26px;border:1px solid rgba(255,255,255,.14);background:var(--nav);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);padding:8px}
+.nav button{display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 0;color:var(--navtx);font-weight:700;font-family:var(--display);font-size:13px;border-radius:18px}
 .nav button svg{width:26px;height:26px}
 .nav button.on{color:#fff;background:rgba(255,255,255,.08)}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
@@ -192,6 +198,23 @@ html{-webkit-tap-highlight-color:transparent}
 .ylink{display:block;text-align:center;margin-top:8px;color:var(--muted);font-size:14px}
 .install{margin-top:20px;display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:20px;background:var(--panel);padding:12px 14px}
 .install .t{flex:1;min-width:0}
+/* magic */
+#magic{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.app{position:relative;z-index:1}
+body{transition:background-color .5s}
+.scard::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.22) 48%,transparent 60%);transform:translateX(130%);transition:transform .8s ease}
+.scard:hover::after,.scard:active::after{transform:translateX(-130%)}
+.cont{position:relative;overflow:hidden;box-shadow:0 0 24px var(--accent-soft)}
+.cont::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,transparent 40%,rgba(255,255,255,.14) 50%,transparent 60%);transform:translateX(120%);animation:sheen 5s ease-in-out infinite 1s}
+@keyframes sheen{0%,60%{transform:translateX(120%)}100%{transform:translateX(-120%)}}
+.pill-btn{animation:glowp 3.2s ease-in-out infinite}
+@keyframes glowp{50%{box-shadow:0 6px 28px var(--accent-glow),0 0 0 4px var(--accent-soft)}}
+.skins{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px}
+.skin{display:flex;flex-direction:column;align-items:center;gap:8px;padding:12px 4px;border-radius:18px;border:1px solid var(--line);background:var(--panel2);font-weight:700;font-size:14px}
+.skin .dot{width:54px;height:54px;border-radius:50%;box-shadow:inset 0 0 0 2px rgba(255,255,255,.25),0 6px 20px rgba(0,0,0,.35);position:relative}
+.skin .dot::after{content:"✦";position:absolute;top:6px;right:9px;font-size:13px;color:#fff;opacity:.9}
+.skin[aria-pressed="true"]{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent-soft),0 0 22px var(--accent-glow)}
+@media (prefers-reduced-motion:reduce){.cont::after,.pill-btn{animation:none}.scard::after{display:none}}
 </style>
 </head>
 <body>
@@ -226,6 +249,7 @@ const I={
  notes:'<rect x="6" y="3" width="13" height="18" rx="2"/><path d="M6 7H4M6 12H4M6 17H4M10 8h5M10 12h5"/>',
  file:'<path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h4"/>',
  quiz:'<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .8-1 1.5V14M12 17v.01"/>',
+ palette:'<path d="M12 3a9 9 0 0 0 0 18c1.4 0 2-.9 2-1.8 0-1.1-.9-1.5-.9-2.6 0-.9.8-1.6 1.8-1.6h2.1A4 4 0 0 0 21 11c0-4.4-4-8-9-8z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="14.5" cy="7" r="1"/>',
  plus:'<path d="M12 5v14M5 12h14"/>', edit:'<path d="M4 20h4L19 9l-4-4L4 16z"/>', trash:'<path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/>',
  link:'<path d="M10 14a4 4 0 0 0 6 0l3-3a4 4 0 0 0-6-6l-1 1M14 10a4 4 0 0 0-6 0l-3 3a4 4 0 0 0 6 6l1-1"/>'
 };
@@ -233,7 +257,7 @@ const ic=(n,c='i')=>`<svg class="${c}" viewBox="0 0 24 24">${I[n]}</svg>`;
 const play='<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>';
 
 const SUBJ={
- islamic:{name:'التربية الإسلامية',c:'#a855f7',icon:'mosque',t:'أ. يوسف المطيري',q:'بكالوريوس شريعة – جامعة الكويت',d:'تعزيز القيم الإسلامية وفهم العقيدة والعبادات والسيرة النبوية وتطبيقها في الحياة اليومية.'},
+ islamic:{name:'التربية الإسلامية',c:'#84cc16',icon:'mosque',t:'أ. يوسف المطيري',q:'بكالوريوس شريعة – جامعة الكويت',d:'تعزيز القيم الإسلامية وفهم العقيدة والعبادات والسيرة النبوية وتطبيقها في الحياة اليومية.'},
  arabic:{name:'اللغة العربية',c:'#10b981',icon:'pen',t:'أ. فاطمة الرشيدي',q:'ماجستير لغة عربية وآدابها',d:'تنمية مهارات القراءة والكتابة والتذوق الأدبي، وإتقان قواعد النحو والبلاغة.'},
  english:{name:'اللغة الإنجليزية',c:'#3b82f6',icon:'eng',t:'أ. سارة الكندري',q:'بكالوريوس أدب إنجليزي',d:'بناء مهارات الاستماع والمحادثة والقراءة والكتابة باللغة الإنجليزية بأسلوب تفاعلي.'},
  quran:{name:'القرآن الكريم',c:'#ec4899',icon:'quran',t:'أ. عبدالله الشمري',q:'إجازة في القراءات العشر',d:'تلاوة القرآن الكريم وتجويده وحفظه مع فهم معانيه وتفسير آياته.'},
@@ -271,6 +295,8 @@ const QB={
  computer:[['وحدة المعالجة المركزية تُختصر',['CPU','RAM','USB','GPU'],0],['دالة الطباعة في بايثون',['print()','echo()','write()','show()'],0],['ذاكرة مؤقتة تُمسح عند إطفاء الجهاز',['RAM','ROM','القرص الصلب','الفلاش'],0]],
  social:[['عاصمة دولة الكويت',['مدينة الكويت','الجهراء','الأحمدي','حولي'],0],['يوم الاستقلال الوطني الكويتي',['25 فبراير','26 فبراير','1 يناير','19 يونيو'],0],['أكبر قارة مساحةً',['آسيا','أفريقيا','أوروبا','أمريكا الشمالية'],0]]
 };
+const SKINS=[['emerald','زمرّدي','#0f5a5e','#f5a524'],['royal','ملكي','#5b21b6','#f472b6'],['sunset','الغروب','#be123c','#fb923c'],['ocean','المحيط','#1d4ed8','#22d3ee'],['gold','ذهبي','#2a2214','#e9b949'],['aurora','الشفق','#6b21a8','#6ee7b7']];
+const skinGrid=()=>`<div class="skins">${SKINS.map(([id,n,a,b])=>`<button class="skin" data-act="skin" data-v="${id}" aria-pressed="${(S.skin||'emerald')===id}"><span class="dot" style="background:radial-gradient(circle at 30% 30%,#fff8 0,${b} 35%,${a} 100%)"></span>${n}</button>`).join('')}</div>`;
 const DAYS=['الأحد','الاثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
 
 /* ---------- state ---------- */
@@ -320,7 +346,7 @@ function embedOf(u){try{const x=new URL(u);const h=x.hostname.replace(/^(www|m)\
  if(/\.(mp4|webm|mov)$/i.test(x.pathname))return{k:'file',src:u};
 }catch(e){}return null}
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const ring=(p,c)=>{const r=24,C=2*Math.PI*r;return `<div class="ring"><svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="${r}" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="7"/><circle cx="30" cy="30" r="${r}" fill="none" stroke="${c}" stroke-width="7" stroke-linecap="round" stroke-dasharray="${C*p/100} ${C}"/></svg><span>${p}%</span></div>`};
+const ring=(p,c)=>{const r=24,C=2*Math.PI*r;return `<div class="ring"><svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="${r}" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="7"/><circle cx="30" cy="30" r="${r}" fill="none" style="stroke:${c}" stroke-width="7" stroke-linecap="round" stroke-dasharray="${C*p/100} ${C}"/></svg><span>${p}%</span></div>`};
 const typeIcon={video:'chevL',pdf:'file',quiz:'quiz'};
 const typeName={video:'فيديو',pdf:'ملف PDF',quiz:'اختبار'};
 
@@ -334,7 +360,7 @@ function contBanner(){
 function vHome(){
  const subs=subjectsFor(S.grade);
  return `<div class="hello"><div class="avatar">${esc(S.name.trim()[0]||'ط')}</div><div class="who"><h1>أهلاً${S.name?'، '+esc(S.name):' بك'}</h1><div class="muted" style="font-weight:700">الصف ${S.grade}</div><div class="tag">مشترك</div></div>
- <button class="iconbtn" data-act="toast" data-m="تواصل مع معلميك من صفحة كل مادة" aria-label="الرسائل">${ic('chat')}</button><button class="iconbtn" data-act="toast" data-m="لا توجد إشعارات جديدة" aria-label="الإشعارات">${ic('bell')}</button></div>
+ <button class="iconbtn" data-act="skins" aria-label="ألوان المنصة">${ic('palette')}</button><button class="iconbtn" data-act="toast" data-m="لا توجد إشعارات جديدة" aria-label="الإشعارات">${ic('bell')}</button></div>
  ${contBanner()}
  <div class="sec-head"><h2>المواد الدراسية</h2><button class="pill-btn" data-act="grade">اختر مرحلتك</button></div>
  <div class="grid">${subs.map(sid=>{const s=SUBJ[sid],st=stats(sid);return `<button class="scard" style="--c:${s.c}" data-act="subj" data-s="${sid}">
@@ -361,7 +387,7 @@ function vSubject(){
  <div class="quick"><button data-act="notes"><span class="q">${ic('notes')}</span>مذكرات شاملة</button><button data-act="quiz"><span class="q">${ic('bubble')}</span>حافظ وفاهم؟</button><button data-act="marks"><span class="q">${ic('mark')}</span>مرجعك</button></div>
  <div class="sec-head"><h2>محتويات المادة</h2>${S.teacher?`<button class="pill-btn" data-act="addU">+ وحدة</button>`:''}</div>
  ${C.length?C.map(u=>{const a=u.lessons.length,d=u.lessons.filter(l=>isDone(l.id)).length,p=a?Math.round(d/a*100):0,open=V.open===u.id;
-  return `<div class="unit ${open?'open':''}"><button class="uhead" data-act="unit" data-id="${u.id}" aria-expanded="${open}">${ic('chevD','i chev')}<div class="t"><b>${esc(u.title)}</b><small>${a} دروس</small></div>${ring(p,open?'#fff':'#c026d3')}</button>
+  return `<div class="unit ${open?'open':''}"><button class="uhead" data-act="unit" data-id="${u.id}" aria-expanded="${open}">${ic('chevD','i chev')}<div class="t"><b>${esc(u.title)}</b><small>${a} دروس</small></div>${ring(p,open?'#fff':'var(--accent)')}</button>
   ${open?`<div class="lessons">${u.lessons.map(l=>`<button class="lesson" data-act="lesson" data-s="${sid}" data-id="${l.id}"><span class="lt">${l.type==='video'?'<svg viewBox="0 0 24 24" style="fill:#fff;width:16px;height:16px"><path d="M8 5v14l11-7z"/></svg>':ic(typeIcon[l.type])}</span><span class="t">${esc(l.title)}<br><small>${typeName[l.type]} · ${esc(l.dur)}</small></span><span class="done ${isDone(l.id)?'on':''}">${isDone(l.id)?ic('check'):''}</span></button>`).join('')||'<div class="muted" style="padding:6px">لا توجد دروس بعد</div>'}</div>
   ${S.teacher?`<div class="tools"><button class="ghost" data-act="addL" data-u="${u.id}">+ درس</button><button class="ghost" data-act="renU" data-u="${u.id}">إعادة تسمية</button><button class="ghost danger" data-act="delU" data-u="${u.id}">${V.confirm==='u'+u.id?'اضغط للتأكيد':'حذف الوحدة'}</button></div>`:''}`:''}</div>`}).join(''):`<div class="empty">لا توجد وحدات في هذا الفصل${S.teacher?' – أضف وحدة من الزر أعلاه':''}</div>`}`;
 }
@@ -396,9 +422,10 @@ function vAccount(){
  <div class="card"><label for="nm" style="margin-top:0">الاسم</label><input id="nm" value="${esc(S.name)}"><label for="gr">الصف</label><select id="gr">${[6,7,8,9,10,11,12].map(g=>`<option value="${g}" ${g===S.grade?'selected':''}>الصف ${g}</option>`).join('')}</select>
  <div style="margin-top:14px"><button class="btn primary" data-act="saveAcc">حفظ</button></div></div>
  <div class="card"><div class="switch"><div><b style="font-family:var(--display)">وضع المعلم</b><div class="muted" style="font-size:14px">إضافة الوحدات والدروس وروابط الفيديو والملفات وتعديل بيانات المعلم</div></div><button class="toggle" aria-pressed="${S.teacher}" data-act="tmode" aria-label="وضع المعلم"></button></div></div>
+ <div class="card"><b style="font-family:var(--display)">ألوان المنصة ✦</b><div class="muted" style="font-size:14px">اختر الثيم اللي يعجبك</div>${skinGrid()}</div>
  ${standalone()?'':`<div class="card"><div class="switch"><div><b style="font-family:var(--display)">تثبيت التطبيق</b><div class="muted" style="font-size:14px">أضف دروسي إلى الشاشة الرئيسية ليعمل كتطبيق</div></div><button class="btn primary" data-act="install">تثبيت</button></div></div>`}
  ${S.teacher?`<div class="card"><b style="font-family:var(--display)">نشر المحتوى للطلاب</b><div class="muted" style="font-size:14px;margin-bottom:10px">نزّل ملف content.json وارفعه مكان الملف القديم في موقع المنصة، فيظهر المحتوى الجديد عند كل الطلاب.</div><div class="row" style="flex-wrap:wrap"><button class="btn primary" data-act="copyJson">نسخ المحتوى</button>${NATIVE?'':'<button class="btn" data-act="export">تنزيل content.json</button>'}</div></div>`:''}
- <div class="card"><a class="btn" style="width:100%" href="${siteLink('privacy.html')}" target="_blank" rel="noopener">سياسة الخصوصية</a></div>
+ <div class="card"><a class="btn" style="width:100%" href="${siteLink('privacy.html')}">سياسة الخصوصية</a></div>
  <div class="card"><b style="font-family:var(--display)">إعادة ضبط التقدّم</b><div class="muted" style="font-size:14px;margin-bottom:10px">يمسح الدروس المكتملة والمحفوظات لهذا الصف</div><button class="btn" style="color:#fecaca" data-act="reset">${V.confirm==='reset'?'اضغط مرة أخرى للتأكيد':'إعادة الضبط'}</button></div>`;
 }
 
@@ -408,11 +435,11 @@ function closeSheet(){document.getElementById('layer').innerHTML=''}
 function toast(m){const t=document.createElement('div');t.className='toast';t.textContent=m;document.body.appendChild(t);setTimeout(()=>t.remove(),1900)}
 function notesSheet(){
  const C=content(V.subj)[V.sem];const items=[];C.forEach(u=>u.lessons.filter(l=>l.type==='pdf').forEach(l=>items.push({u,l})));
- sheet(`<h2>مذكرات شاملة – الفصل ${V.sem===1?'الأول':'الثاني'}</h2><p class="muted" style="margin:0 0 12px">ملخصات ومذكرات ${SUBJ[V.subj].name}</p>${items.length?items.map(x=>`<button class="item" data-act="lesson" data-s="${V.subj}" data-id="${x.l.id}"><span class="sicon" style="--c:#7c3aed">${ic('file')}</span><div class="t"><b>${esc(x.l.title)}</b><small>${esc(x.u.title)} · ${esc(x.l.dur)}</small></div>${ic('chevL')}</button>`).join(''):'<div class="empty">لا توجد مذكرات في هذا الفصل</div>'}`);
+ sheet(`<h2>مذكرات شاملة – الفصل ${V.sem===1?'الأول':'الثاني'}</h2><p class="muted" style="margin:0 0 12px">ملخصات ومذكرات ${SUBJ[V.subj].name}</p>${items.length?items.map(x=>`<button class="item" data-act="lesson" data-s="${V.subj}" data-id="${x.l.id}"><span class="sicon" style="--c:var(--accent2)">${ic('file')}</span><div class="t"><b>${esc(x.l.title)}</b><small>${esc(x.u.title)} · ${esc(x.l.dur)}</small></div>${ic('chevL')}</button>`).join(''):'<div class="empty">لا توجد مذكرات في هذا الفصل</div>'}`);
 }
 function marksSheet(){
  const items=[];const C=content(V.subj);[1,2].forEach(s=>C[s].forEach(u=>u.lessons.forEach(l=>{if(S.marks[S.grade+'|'+l.id])items.push({u,l})})));
- sheet(`<h2>مرجعك</h2><p class="muted" style="margin:0 0 12px">الدروس التي حفظتها للرجوع إليها</p>${items.length?items.map(x=>`<button class="item" data-act="lesson" data-s="${V.subj}" data-id="${x.l.id}"><span class="sicon" style="--c:#7c3aed">${ic('mark')}</span><div class="t"><b>${esc(x.l.title)}</b><small>${esc(x.u.title)}</small></div>${ic('chevL')}</button>`).join(''):'<div class="empty">لم تحفظ أي درس بعد. اضغط «حفظ في مرجعك» داخل أي درس.</div>'}`);
+ sheet(`<h2>مرجعك</h2><p class="muted" style="margin:0 0 12px">الدروس التي حفظتها للرجوع إليها</p>${items.length?items.map(x=>`<button class="item" data-act="lesson" data-s="${V.subj}" data-id="${x.l.id}"><span class="sicon" style="--c:var(--accent2)">${ic('mark')}</span><div class="t"><b>${esc(x.l.title)}</b><small>${esc(x.u.title)}</small></div>${ic('chevL')}</button>`).join(''):'<div class="empty">لم تحفظ أي درس بعد. اضغط «حفظ في مرجعك» داخل أي درس.</div>'}`);
 }
 function quizSheet(){
  const Q=V.quiz; const bank=QB[V.subj]||QB.math;
@@ -452,18 +479,20 @@ document.addEventListener('click',e=>{
   case 'sem':V.sem=+el.dataset.v;V.open=null;render();break;
   case 'unit':V.open=V.open===el.dataset.id?null:el.dataset.id;V.confirm=null;render();break;
   case 'lesson':{const s=el.dataset.s,id=el.dataset.id;const f=findLesson(s,id);S.last={grade:S.grade,subj:s,id};save();go('lesson',{subj:s,lesson:id,sem:f?f.sem:V.sem,open:f?f.unit.id:V.open});break}
-  case 'done':{const k=S.grade+'|'+V.lesson;if(S.done[k])delete S.done[k];else{S.done[k]=1;toast('أحسنت! تم تسجيل الدرس كمكتمل')}save();const la=document.getElementById('lact');if(la)la.innerHTML=lessonActs();else render();break}
+  case 'done':{const k=S.grade+'|'+V.lesson;if(S.done[k])delete S.done[k];else{S.done[k]=1;burst(e.clientX,e.clientY,40);toast('أحسنت! تم تسجيل الدرس كمكتمل ✦')}save();const la=document.getElementById('lact');if(la)la.innerHTML=lessonActs();else render();break}
   case 'mark':{const k=S.grade+'|'+V.lesson;if(S.marks[k])delete S.marks[k];else{S.marks[k]=1;toast('تم الحفظ في مرجعك')}save();const la2=document.getElementById('lact');if(la2)la2.innerHTML=lessonActs();else render();break}
   case 'notes':notesSheet();break;
   case 'marks':marksSheet();break;
   case 'quiz':case 'quizRe':V.quiz={i:0,score:0,pick:null};quizSheet();break;
-  case 'qpick':{if(V.quiz.pick!=null)return;const i=+el.dataset.i;V.quiz.pick=i;if(i===(QB[sid]||QB.math)[V.quiz.i][2])V.quiz.score++;quizSheet();break}
+  case 'qpick':{if(V.quiz.pick!=null)return;const i=+el.dataset.i;V.quiz.pick=i;if(i===(QB[sid]||QB.math)[V.quiz.i][2]){V.quiz.score++;burst(e.clientX,e.clientY,26)}quizSheet();break}
   case 'qnext':V.quiz.i++;V.quiz.pick=null;V.quiz.order=null;quizSheet();break;
   case 'tinfo':{const T=teacherOf(sid);sheet(`<h2>${esc(T.name)}</h2><p class="muted">معلم ${SUBJ[sid].name} – الصف ${S.grade}</p><div class="card"><b>المؤهل العلمي</b><p style="margin:4px 0 0">${esc(T.qual)}</p></div>`);break}
   case 'editT':{const T=teacherOf(sid);sheet(`<h2>بيانات المعلم</h2><form id="tf"><label for="tn">الاسم</label><input id="tn" value="${esc(T.name)}"><label for="tq">المؤهل العلمي</label><input id="tq" value="${esc(T.qual)}"><button class="btn primary" style="width:100%;margin-top:16px">حفظ</button></form>`);break}
   case 'grade':sheet(`<h2>اختر مرحلتك</h2><p class="muted" style="margin:0">تتغيّر المواد والمحتوى حسب الصف</p><div class="grades">${[6,7,8,9,10,11,12].map(g=>`<button class="${g===S.grade?'on':''}" data-act="setG" data-v="${g}">${g}</button>`).join('')}</div>`);break;
   case 'setG':S.grade=+el.dataset.v;save();go('home');toast('تم التبديل إلى الصف '+S.grade);break;
   case 'toast':toast(el.dataset.m);break;
+  case 'skins':sheet(`<h2>ألوان المنصة ✦</h2><p class="muted" style="margin:0">اختر الثيم اللي يعجبك</p>${skinGrid()}`);break;
+  case 'skin':{S.skin=el.dataset.v;save();applySkin();const r=el.getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height/3,34);document.querySelectorAll('.skin').forEach(b=>b.setAttribute('aria-pressed',b.dataset.v===S.skin));if(V.view==='account')render();break}
   case 'tmode':if(S.teacher){S.teacher=false;save();render();toast('تم إيقاف وضع المعلم')}else sheet(`<h2>وضع المعلم</h2><form id="pf"><label for="pin">الرقم السري</label><input id="pin" type="password" inputmode="numeric" required><p id="perr" class="muted" hidden style="color:#fca5a5">الرقم السري غير صحيح</p><button class="btn primary" style="width:100%;margin-top:16px">دخول</button></form>`);break;
   case 'copyJson':{const txt=JSON.stringify({custom:Object.assign({},PUB.custom,S.custom),teachers:Object.assign({},PUB.teachers,S.teachers)});const fb=()=>{sheet(`<h2>انسخ المحتوى</h2><p class="muted" style="margin:0 0 8px">حدّد النص كله وانسخه، ثم الصقه في ملف content.json على GitHub.</p><textarea id="jtxt" rows="8" dir="ltr" readonly>${esc(txt)}</textarea>`);const t=document.getElementById('jtxt');t.focus();t.select()};try{navigator.clipboard.writeText(txt).then(()=>toast('تم النسخ – الصقه في content.json على GitHub'),fb)}catch(e){fb()}break}
   case 'export':{const data={custom:Object.assign({},PUB.custom,S.custom),teachers:Object.assign({},PUB.teachers,S.teachers)};const b=new Blob([JSON.stringify(data)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='content.json';document.body.appendChild(a);a.click();a.remove();toast('تم تنزيل content.json');break}
@@ -490,6 +519,23 @@ document.addEventListener('submit',e=>{
  if(f.id==='tf'){S.teachers[ckey(sid)]={name:$('tn'),qual:$('tq')};save();closeSheet();render()}
  if(f.id==='sf'){S.schedule.push({day:+$('sd'),time:$('st'),subj:$('ss'),note:$('sn')});save();closeSheet();render();toast('تمت إضافة الموعد')}
 });
+/* ---------- magic ---------- */
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const cv=document.createElement('canvas');cv.id='magic';document.body.prepend(cv);
+const cx=cv.getContext('2d');let W=0,H=0,DPR=Math.min(2,devicePixelRatio||1),COL=['#fff','#fcd34d'];
+const stars=[],sparks=[];
+function size(){W=innerWidth;H=innerHeight;cv.width=W*DPR;cv.height=H*DPR;cx.setTransform(DPR,0,0,DPR,0,0)}
+addEventListener('resize',size);size();
+for(let i=0;i<38;i++)stars.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.6+.4,s:Math.random()*.25+.05,t:Math.random()*6.28,k:Math.random()<.5?0:1});
+function star4(x,y,r){cx.beginPath();cx.moveTo(x,y-r);cx.quadraticCurveTo(x,y,x+r,y);cx.quadraticCurveTo(x,y,x,y+r);cx.quadraticCurveTo(x,y,x-r,y);cx.quadraticCurveTo(x,y,x,y-r);cx.fill()}
+function burst(x,y,n){if(RM)return;for(let i=0;i<n;i++){const a=Math.random()*6.28,v=Math.random()*5+2;sparks.push({x,y,vx:Math.cos(a)*v,vy:Math.sin(a)*v-2,life:1,r:Math.random()*5+3,k:i%3?1:0})}if(!running)loop()}
+let running=false;
+function loop(){running=true;cx.clearRect(0,0,W,H);
+ for(const s of stars){s.t+=.03;s.y-=s.s;if(s.y<-5){s.y=H+5;s.x=Math.random()*W}cx.globalAlpha=.25+.45*Math.abs(Math.sin(s.t));cx.fillStyle=COL[s.k];s.r>1.4?star4(s.x,s.y,s.r*2.4):(cx.beginPath(),cx.arc(s.x,s.y,s.r,0,6.28),cx.fill())}
+ for(let i=sparks.length-1;i>=0;i--){const p=sparks[i];p.x+=p.vx;p.y+=p.vy;p.vy+=.18;p.vx*=.98;p.life-=.02;if(p.life<=0){sparks.splice(i,1);continue}cx.globalAlpha=p.life;cx.fillStyle=COL[p.k];star4(p.x,p.y,p.r*p.life+1)}
+ cx.globalAlpha=1;if(RM&&!sparks.length){running=false;return}requestAnimationFrame(loop)}
+function applySkin(){const r=document.documentElement;r.dataset.skin=S.skin||'emerald';const cs=getComputedStyle(r);COL=[cs.getPropertyValue('--accent-hi').trim()||'#fff',cs.getPropertyValue('--fg').trim()||'#fff'];const m=document.querySelector('meta[name=theme-color]');if(m)m.content=cs.getPropertyValue('--bg').trim()}
+applySkin();loop();
 function standalone(){return NATIVE||matchMedia('(display-mode: standalone)').matches||navigator.standalone===true}
 window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installEvt=e});
 if(!NATIVE&&'serviceWorker' in navigator&&location.protocol==='https:')navigator.serviceWorker.register('sw.js').catch(()=>{});
