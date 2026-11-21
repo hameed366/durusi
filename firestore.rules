@@ -1,0 +1,66 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ===== غيّر هذا الإيميل إلى إيميل المدير =====
+    function adminEmail() { return 'aboabd366@gmail.com'; }
+
+    function signedIn() { return request.auth != null; }
+    function isAdmin() {
+      return signedIn() && request.auth.token.email == adminEmail()
+        && request.auth.token.email_verified == true;
+    }
+    function hasProfile() { return signedIn() && exists(/databases/$(database)/documents/users/$(request.auth.uid)); }
+    function me() { return get(/databases/$(database)/documents/users/$(request.auth.uid)).data; }
+    function isTeacher() { return hasProfile() && me().role == 'teacher'; }
+    function isStaff() { return isAdmin() || isTeacher(); }
+    function teaches(ck) { return isTeacher() && ck in me().get('subjects', []); }
+    function activeFor(ck) {
+      let u = me();
+      return hasProfile() && u.get('active', false) == true
+        && (u.get('activeUntil', null) == null || request.time < u.activeUntil)
+        && (u.get('accessGrade', 0) == 0 || ck.split('_')[0] == 'g' + string(u.accessGrade));
+    }
+    // الطالب يفعّل اشتراكه بكود صالح استخدمه للتو
+    function redeemOk(uid) {
+      let d = request.resource.data;
+      let c = getAfter(/databases/$(database)/documents/codes/$(d.code)).data;
+      return d.diff(resource.data).affectedKeys().hasOnly(['active', 'activeUntil', 'accessGrade', 'code'])
+        && d.active == true && c.usedBy == uid
+        && d.activeUntil == c.get('expires', null) && d.accessGrade == c.get('grade', 0);
+    }
+
+    match /users/{uid} {
+      allow read: if signedIn() && (request.auth.uid == uid || isStaff());
+      allow create: if isAdmin() || (signedIn() && request.auth.uid == uid
+        && request.resource.data.keys().hasOnly(['name', 'email', 'grade', 'role', 'active', 'createdAt'])
+        && request.resource.data.role == 'student' && request.resource.data.active == false);
+      allow update: if isAdmin() || (signedIn() && request.auth.uid == uid && (
+        request.resource.data.diff(resource.data).affectedKeys().hasOnly(['name', 'grade'])
+        || redeemOk(uid)));
+      allow delete: if isAdmin();
+    }
+
+    match /codes/{code} {
+      allow get: if signedIn();
+      allow list, create, delete: if isAdmin();
+      allow update: if isAdmin() || (signedIn() && resource.data.usedBy == null
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['usedBy', 'usedAt'])
+        && request.resource.data.usedBy == request.auth.uid);
+    }
+
+    match /content/{ck} {
+      allow read: if signedIn();
+      allow write: if isAdmin() || teaches(ck);
+      match /secure/{doc} {
+        allow read: if isStaff() || activeFor(ck);
+        allow write: if isAdmin() || teaches(ck);
+      }
+    }
+
+    match /progress/{uid} {
+      allow read: if signedIn() && (request.auth.uid == uid || isStaff());
+      allow write: if signedIn() && request.auth.uid == uid;
+    }
+  }
+}
