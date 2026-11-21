@@ -138,7 +138,7 @@ function notices(){
 }
 function vHome(){
  const subs=subjectsFor(S.grade);
- return `<div class="hello"><div class="avatar">${initial(ME.name)}</div><div class="who"><h1>أهلاً${ME.name?'، '+esc(ME.name):' بك'}</h1><div class="muted" style="font-weight:700">الصف ${S.grade}</div><div>${statusTag()}</div></div>
+ return `<div class="hello"><div class="avatar">${initial(ME.name)}</div><div class="who"><h1>أهلاً${ME.name?'، '+esc(ME.name):' بك'}</h1><div class="muted" style="font-weight:700">${isStaff()?'تعرض مواد الصف ':'الصف '}${S.grade}</div><div>${statusTag()}</div></div>
  <button class="iconbtn" data-act="skins" aria-label="ألوان المنصة">${ic('palette')}</button><button class="iconbtn" data-act="toast" data-m="لا توجد إشعارات جديدة" aria-label="الإشعارات">${ic('bell')}</button></div>
  ${notices()}${contBanner()}
  <div class="sec-head"><h2>المواد الدراسية</h2><button class="pill-btn" data-act="grade">${isStaff()?'اختر الصف':'صفي'}</button></div>
